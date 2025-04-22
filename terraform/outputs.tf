@@ -1,4 +1,4 @@
-# infra/outputs.tf
+# /terraform/outputs.tf
 
 output "public_url" {
   value = module.public_site.domain_name
@@ -19,5 +19,5 @@ output "route53_name_servers" {
 
 output "route53_zone_id" {
   description = "생성된 Hosted Zone의 ID"
-  value       = module.route53_zones.route53_zone_id[var.root_domain]
+  value       = module.route53_zones.route53_zone_zone_id[var.root_domain]
 }

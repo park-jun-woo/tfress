@@ -1,4 +1,4 @@
-# modules/registered_domain/outputs.tf
+# /terraform/modules/registered_domain/outputs.tf
 
 output "registered_domain_id" {
   description = "등록된 도메인의 리소스 ID"

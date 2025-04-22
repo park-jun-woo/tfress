@@ -30,14 +30,21 @@ S3 + CloudFront static site with versioned articles and a journalist → edi
    git clone https://github.com/your‑org/tfress.git
    cd tfress/infra
    ```
-2. Configure your variables in `terraform/envs/<env>/terraform.tfvars`  
-3. Initialize & apply  
+2. Configure your variables in `/terraform/env/backend.tfvars`
    ```bash
-   terraform init
+   bucket  = "apaya-terraform-bucket"
+   key     = "tfress/infra.tfstate"
+   region  = "ap-northeast-2"
+   encrypt = true
+   ```
+3. Configure your variables in `terraform/env/dev.tfvars`
+4. Initialize & apply  
+   ```bash
+   terraform init -backend-config=./env/backend.tfvars
    terraform workspace new dev    # or select existing workspace
    terraform apply
    ```
-4. Deploy your frontend builds and Lambda code as described in the **CI** folder.
+5. Deploy your frontend builds and Lambda code as described in the **CI** folder.
 
 ## License
 

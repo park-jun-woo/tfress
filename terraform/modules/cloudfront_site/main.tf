@@ -1,4 +1,4 @@
-# modules/cloudfront_site/main.tf
+# /terraform/modules/cloudfront_site/main.tf
 
 locals {
   name = "${var.project}-cf-${var.stage}"
@@ -46,17 +46,17 @@ resource "aws_cloudfront_public_key" "this" {
 resource "aws_cloudfront_key_group" "this" {
   count = var.enable_signed_cookie ? 1 : 0
   name  = "${local.name}-keygroup"
-  items = [ aws_cloudfront_public_key.this[0].id ]
+  items = [aws_cloudfront_public_key.this[0].id]
 }
 
 # ───────────────────────────────────────────────────────────────
 # 5) OAC (Origin Access Control) 생성
 # ───────────────────────────────────────────────────────────────
 resource "aws_cloudfront_origin_access_control" "this" {
-  name                               = "${local.name}-oac"
+  name                              = "${local.name}-oac"
   origin_access_control_origin_type = "s3"
-  signing_behavior                   = "always"
-  signing_protocol                   = "sigv4"
+  signing_behavior                  = "always"
+  signing_protocol                  = "sigv4"
 }
 
 # ───────────────────────────────────────────────────────────────

@@ -1,4 +1,4 @@
-# modules/registered_domain/variables.tf
+# /terraform/modules/registered_domain/variables.tf
 
 variable "domain_name" {
   description = "등록할 루트 도메인 (예: example.com)"

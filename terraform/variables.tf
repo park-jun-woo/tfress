@@ -1,4 +1,4 @@
-# infra/variables.tf
+# /terraform/variables.tf
 
 variable "project_name" {
   description = "예: sample"

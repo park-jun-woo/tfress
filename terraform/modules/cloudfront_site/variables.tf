@@ -1,4 +1,4 @@
-# modules/cloudfront_site/variables.tf
+# /terraform/modules/cloudfront_site/variables.tf
 
 variable "project" {
   type        = string

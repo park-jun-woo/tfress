@@ -1,8 +1,8 @@
-# modules/registered_domain/main.tf
+# /terraform/modules/registered_domain/main.tf
 
 # 1) 도메인 등록 가능 여부 확인 (Route53 Domains API)
 data "external" "domain_availability" {
-  program = ["bash", "-c", 
+  program = ["bash", "-c",
     <<-EOF
         set -e
         avail=$(aws route53domains check-domain-availability \

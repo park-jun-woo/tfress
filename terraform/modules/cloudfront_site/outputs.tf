@@ -1,4 +1,4 @@
-# modules/cloudfront_site/outputs.tf
+# /terraform/modules/cloudfront_site/outputs.tf
 
 output "distribution_id" {
   value       = aws_cloudfront_distribution.this.id
@@ -18,6 +18,6 @@ output "kms_signing_key_id" {
 
 # KMS 키 ARN (IAM 정책에 Resource로 사용)
 output "kms_signing_key_arn" {
-  value       = module.kms_cookie.arn
+  value       = module.kms_cookie.key_arn
   description = "KMS key ARN for signing CloudFront cookies"
 }
