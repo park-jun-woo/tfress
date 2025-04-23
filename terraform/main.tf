@@ -231,10 +231,10 @@ module "cognito" {
     }
   ] # :contentReference[oaicite:1]{index=1}
 
-  # 5) 그룹(역할) 정의 (숫자 작을수록 우선순위↑, superadmin만 사용자 생성 가능)
+  # 5) 그룹(역할) 정의 (숫자 작을수록 우선순위↑, admin만 사용자 생성 가능)
   user_groups = [
     {
-      name        = "superadmin"
+      name        = "admin"
       description = "최고관리자"
       precedence  = 1
     },
